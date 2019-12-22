@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="FirstXamarinApp.Views.NewItemPage" Title="New Item">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked" />
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="15">
+            <Entry
+                Text="{Binding Item.Text}"
+                d:Text="Item name" FontSize="Medium"
+                Placeholder="Enter a name here"/>
+            <Picker x:Name="CourseList"
+                Title="Course"
+                ItemsSource="{Binding CourseList}"
+                SelectedItem="{Binding Item.Course}"
+                ItemDisplayBinding="{Binding Name}"/>
+            <Editor
+                Text="{Binding Item.Description}"
+                d:Text="Item description"
+                FontSize="Medium"
+                Margin="0"
+                Placeholder="Description"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
