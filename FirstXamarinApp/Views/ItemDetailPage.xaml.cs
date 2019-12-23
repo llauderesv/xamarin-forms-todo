@@ -20,8 +20,8 @@ namespace FirstXamarinApp.Views
             InitializeComponent();
 
             this.viewModel = viewModel;
+            this.viewModel.Title = "Edit TODO";
 
-            this.viewModel.Title = "Edit Page";
             BindingContext = this.viewModel;
         }
 
